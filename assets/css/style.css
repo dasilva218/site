@@ -1,57 +1,133 @@
 @charset "utf-8";
 /* CSS Document */
-
+/*----déclaration de variable---------*/
+@font-face{
+	font-family:titre ;
+	src: url(../typos/28\ Days\ Later.ttf);
+}
+:root{
+	--couleur-vert: #39FF41;
+	--policimage: titre;
+	--color-sect3: #333333;
+	--color-main:#1C1E1F;
+	--color-background:#000;
+}
 body{
 	width: 100vw;
 	height: 100vh;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background: #000;
+	background: var(--color-background);
 }
 
-
-		/*modification de la section principale*/
-#main{
-	width: 80%;
-	height: 75vh;
-	background: #1c1e1f;
+main{
 	display: flex;
+	width: 85vw;
+	height: 75vh;
+	background-color: var(--color-main);
 }
-/*--------------item du main-------*/
-.item-main{
-	flex: 1 0 0;
-}
+/*-----------section 1 modif ----*/
 .item-main:nth-child(1){
-	flex: 0.3 0 0;
+	flex: 0 0 5%;
+	height: 75vh;
+	
 }
-.item-main:nth-child(2){
-	flex: 1.2 0 0;
-	height: 90vh;
-	align-self: center;
-	background: #099F31;
-	border-radius: 1%;
-	border: 1px solid ;
-	box-shadow: 20px 0px 70px #000;
-}
-.item-main:nth-child(3){
-	flex: 3 0 0;
-}
-.about{
-	box-sizing: border-box;
-	padding: 0.7em;
-}
-/*--------- id menu------*/
-#menu{
+/*------div menu-----*/
+.item-main:nth-child(1) >menu{
 	width: 100%;
 	height: 75vh;
-	display: flex;
 }
-/*--------item image-------------*/
-
-
-#sect-article {
-	background: #2355AF;
+/*---------div buton burger-------*/
+.item-main:nth-child(1) >menu .buton{
+	background-color: var(--couleur-vert);
 	width: 100%;
-	min-height: 100%;
+	height: 15%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	align-content: space-between;
+}
+.buton >span{
+	margin: 0.2em;
+	width: 40%;
+	height: 5%;
+	display: inline-block;
+	border-radius: 10px;
+	background-color: #000;
+}
+/*---------div liste des menu-------*/
+.item-main:nth-child(1) >menu .liste{
+	width: 100%;
+	min-height: 85%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	
+	
+}
+.item-main:nth-child(1) >menu .liste >img{
+	width: 70%;
+	padding: 1.875em 0.3125em;
+
+}
+
+
+
+/*------------section 2 modif---------------*/
+.item-main:nth-child(2){
+	flex: 0 0 25vw;
+	height: 80vh;
+	align-self: center;
+	position: relative;
+}
+.item-main:nth-child(2) > .image{
+	width: 25vh;
+	height: 80vh;
+	filter: drop-shadow(10px 20px 20px #000);
+	
+}
+.item-main:nth-child(2) > .texte{
+	width: 100%;
+	min-height: 10%;
+	position: absolute;
+	text-align: center;
+	top: 5%;
+	left: 0%;
+	color: #fff;
+	text-shadow: 0px 0px 30px var(--couleur-vert);
+
+}
+.texte >h2{
+	font-family: var(--policimage);
+	font-weight: initial;
+	font-size: 2vw;
+}
+.texte h2+h2{
+	color: var(--couleur-vert);
+	font-family: var(--policimage);
+	font-weight: initial;
+	font-size: 1.4vw;
+	text-shadow: inherit;
+}
+.image >img{
+	width: 25vw;
+	height: 80vh;
+	object-fit: cover;
+	
+}
+/*--------------section 3----------*/
+.item-main:nth-child(3){
+	flex: 1 1 75vw;
+	height: 75vh;
+	box-sizing: border-box;
+	padding: 10px;
+	
+}
+.item-main:nth-child(3) > .sect-article{
+	width: 100%;
+	height: 100%;
+	background-color: var(--color-sect3) ;
 }
