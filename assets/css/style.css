@@ -1,16 +1,36 @@
 @charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Arvo&display=swap');
+ 
 /* CSS Document */
 /*----déclaration de variable---------*/
 @font-face{
 	font-family:titre ;
 	src: url(../typos/28\ Days\ Later.ttf);
 }
+
+@font-face{
+	font-family: signature;
+	src: url(../typos/Signature\ Flavour\ Demo.ttf);
+}
 :root{
+	--titre-article: 'Arvo', serif;;
 	--couleur-vert: #39FF41;
 	--policimage: titre;
+	--police-signature: signature;
 	--color-sect3: #333333;
 	--color-main:#1C1E1F;
 	--color-background:#000;
+}
+.line{
+	margin-top: 2em ;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+hr{
+	border: 1px solid var(--couleur-vert);
+	width: 40%;
+	margin: auto;
 }
 body{
 	width: 100vw;
@@ -19,8 +39,18 @@ body{
 	align-items: center;
 	justify-content: center;
 	background: var(--color-background);
+	font-size: 17px;
+	overflow-y: hidden;
 }
-
+.signature{
+	font-size: 4rem;
+	color: #fff;
+	position: absolute;
+	bottom: 0.7rem;
+	right: 8%;
+	font-family: var(--police-signature);
+	transform: translate(0.7em,-0.2em) rotatez(-90deg);
+}
 main{
 	display: flex;
 	width: 85vw;
@@ -68,13 +98,11 @@ main{
 	
 	
 }
-.item-main:nth-child(1) >menu .liste >img{
+.item-main:nth-child(1) >menu .liste a > img{
 	width: 70%;
 	padding: 1.875em 0.3125em;
-
+	
 }
-
-
 
 /*------------section 2 modif---------------*/
 .item-main:nth-child(2){
@@ -89,6 +117,7 @@ main{
 	filter: drop-shadow(10px 20px 20px #000);
 	
 }
+
 .item-main:nth-child(2) > .texte{
 	width: 100%;
 	min-height: 10%;
@@ -100,11 +129,22 @@ main{
 	text-shadow: 0px 0px 30px var(--couleur-vert);
 
 }
-.texte >h2{
+.texte > h2{
 	font-family: var(--policimage);
 	font-weight: initial;
 	font-size: 2vw;
 }
+
+@keyframes flou{
+	0%{
+		filter: blur(100px);
+	}50%{
+		filter: blur(50px);
+	}100%{
+		filter: blur(0px);
+	}
+}
+
 .texte h2+h2{
 	color: var(--couleur-vert);
 	font-family: var(--policimage);
@@ -112,13 +152,21 @@ main{
 	font-size: 1.4vw;
 	text-shadow: inherit;
 }
+
 .image >img{
 	width: 25vw;
 	height: 80vh;
 	object-fit: cover;
+	filter: blur(100px);
+	animation-name: flou;
+	animation-fill-mode: forwards;
+	animation-delay: 1s;
+	animation-duration: 2s;
+	animation-timing-function: ease-in-out;
 	
 }
 /*--------------section 3----------*/
+	
 .item-main:nth-child(3){
 	flex: 1 1 75vw;
 	height: 75vh;
@@ -126,8 +174,95 @@ main{
 	padding: 10px;
 	
 }
-.item-main:nth-child(3) > .sect-article{
+.item-main:nth-child(3) > .sect-article {
 	width: 100%;
 	height: 100%;
 	background-color: var(--color-sect3) ;
+	border: none;
+	box-shadow: 0px 0px 40px #000 inset;
+	box-sizing: border-box;
+	padding: 1.3em;
+	overflow-y: auto;
+	scroll-behavior: smooth;
 }
+.item-main:nth-child(3) > .sect-article > article > p{
+	margin-top: 1em;
+	color: #fff;
+	font-family: var(--titre-article);
+	text-align: justify;
+	font-size: 0.9rem;
+	line-height: 1.3rem;
+	text-indent: 2em;
+}
+cite{
+	margin-top: 1em;
+	color: #fff;
+	font-family: var(--titre-article);
+	text-align: justify;
+	font-size: 0.9rem;
+}
+#ex{
+	margin-top: 0;
+}
+.item-main:nth-child(3) > .sect-article > article h1{
+	font-size: 1.7rem;
+	color: #fff;
+	text-align: center;
+}
+article{
+	margin-top: 1.9em;
+}
+.item-main:nth-child(3) > .sect-article > article h2{
+	margin-top: 1em;
+	font-size: 1.2rem;
+	color: var(--couleur-vert);
+}
+/*-------------------- section compétences -----------------*/
+.containt-comp{
+	width: 100%;
+	display: flex;
+	
+}
+.item-comp{
+	box-sizing: border-box;
+	width: 100%;
+	padding: 0.9em;
+}	
+.item-comp progress {
+	width: 90%;
+	background-color: var(--couleur-vert);
+	border: 1px solid #fff;
+	display: block;
+	border-radius: 0.5em;
+}
+ 
+/*------------- select compétence ---------------*/
+.select{
+	display: flex;
+	justify-content: space-between;
+	width: 90%;
+	color: #fff;
+}
+.select p{
+	box-sizing: border-box;
+	padding: .5em 0;
+}
+/*---------------- section réalisation------------*/
+.real{
+	width: 100%;
+	height: 500px;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-around;
+	align-content: space-around;
+	
+
+}
+.real > div{
+	padding: 20px;
+	width: 20%;
+	height: 20%;
+	background-color: red;
+}
+
