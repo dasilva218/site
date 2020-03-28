@@ -19,3 +19,19 @@ Le mien c'est le web!
 #1C1E1F
 #1c1e1f
 #00bd7e
+@import url('https://fonts.googleapis.com/css?family=Arvo|Ubuntu&display=swap');
+font-family: 'Arvo', ;
+font-family: 'Ubuntu', ;
+
+
+
+------------analytique -------------------------------
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-159948018-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-159948018-1');
+</script>
