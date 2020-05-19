@@ -64,6 +64,25 @@ main{
 	height: 75vh;
 	background-color: var(--color-main);
 }
+@media screen and (max-width:768px){
+	main{
+		width: 100%;
+		height: 90vh;
+	}
+	.item-main:nth-child(1){
+		display: none;
+	}	
+	.item-main:nth-child(2){
+		display: none;
+	}	
+	.item-main:nth-child(3){
+		height: 90vh;
+	}	
+	.sect-article{
+		height: 90vh;
+	}
+	
+}
 /*-----------section 1 modif ----*/
 .item-main:nth-child(1){
 	-webkit-box-flex: 0;
@@ -149,18 +168,7 @@ main{
 		
 }
 
-@-webkit-keyframes flou{
-	0%{
-		-webkit-filter: blur(100px) brightness(15);
-				filter: blur(100px) brightness(15);
-	}50%{
-		-webkit-filter: blur(50px) brightness(25);
-		        filter: blur(50px) brightness(25);
-	}100%{
-		-webkit-filter: blur(0px) brightness(1);
-		        filter: blur(0px) brightness(1);
-	}
-}
+
 
 .image >img{
 	width: 25vw;
@@ -169,16 +177,7 @@ main{
 	   object-fit: cover;
 	-webkit-filter: blur(100px) brightness(15);
 	        filter: blur(100px) brightness(15);
-	-webkit-animation-name: flou;
-	        animation-name: flou;
-	-webkit-animation-fill-mode: forwards;
-	        animation-fill-mode: forwards;
-	-webkit-animation-delay: 3s;
-	        animation-delay: 3s;
-			-webkit-animation-duration: 2s;
-	        animation-duration: 2s;
-	-webkit-animation-timing-function: ease-in-out;
-	        animation-timing-function: ease-in-out;
+
 	
 }
 
