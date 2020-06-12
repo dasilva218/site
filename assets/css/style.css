@@ -1,6 +1,4 @@
-@charset "utf-8";
-@import url('https://fonts.googleapis.com/css?family=Arvo|Ubuntu&display=swap');
- 
+@charset "utf-8"; 
 /* CSS Document */
 /*----déclaration de variable---------*/
 @font-face{
@@ -12,11 +10,12 @@
 	font-family: signature;
 	src: url(../typos/Signature\ Flavour\ Demo.ttf);
 }
+@font-face{
+	font-family: defaulttitre;
+	src: url(/assets/typos/Ubuntu/Ubuntu-Medium.ttf);
+}
 :root{
-	--titre-paragraphe: 'Ubuntu', 'Arvo';
 	--couleur-vert: #39FF41;
-	--policeimage: titre;
-	--police-signature: signature;
 	--color-sect3: #333333;
 	--color-main:#1C1E1F;
 	--color-background:#000;
@@ -27,319 +26,286 @@
 	display: -webkit-box;
 	display: flex;
 	-webkit-box-pack: center;
-	        justify-content: center;
+	justify-content: center;
 }
 hr{
 	border: 1px solid var(--couleur-vert);
 	width: 40%;
 	margin: auto;
 }
+/* --------------- mobile -------- */
 body{
 	width: 100vw;
 	height: 100vh;
-	display: -webkit-box;
-	display: flex;
-	-webkit-box-align: center;
-	        align-items: center;
-	-webkit-box-pack: center;
-			justify-content: center;
 	background: #000;
 	font-size: 17px;
 	overflow-y: hidden;
 }
-.signature{
-	font-size: 4rem;
-	color: #fff;
-	position: absolute;
-	bottom: 0.7rem;
-	right: 8%;
-	font-family: var(--police-signature);
-	-webkit-transform: translate(0.7em,-0.2em) rotatez(-90deg);
-	        transform: translate(0.7em,-0.2em) rotatez(-90deg);
-}
 main{
-	display: -webkit-box;
-	display: flex;
-	width: 85vw;
-	height: 75vh;
+	width: 100vw;
+	height: 100%;
 	background-color: var(--color-main);
 }
-@media screen and (max-width:768px){
-	main{
-		width: 100%;
-		height: 90vh;
-	}
-	.item-main:nth-child(1){
-		display: none;
-	}	
-	.item-main:nth-child(2){
-		display: none;
-	}	
-	.item-main:nth-child(3){
-		height: 90vh;
-	}	
-	.sect-article{
-		height: 90vh;
-	}
-	
-}
-/*-----------section 1 modif ----*/
 .item-main:nth-child(1){
-	-webkit-box-flex: 0;
-	        flex: 0 0 5%;
-	height: 75vh;
-	
+	display: none;	
 }
-/*------div menu-----*/
-.item-main:nth-child(1) >menu{
-	width: 100%;
-	height: 75vh;
-}
-/*---------div buton burger-------*/
-.item-main:nth-child(1) >menu .buton{
-	background-color: var(--couleur-vert);
-	width: 100%;
-	height: 15%;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	
-}
-.buton >span{
-	margin: 0.2em;
-	width: 40%;
-	height: 5%;
-	display: inline-block;
-	border-radius: 10px;
-	background-color: #000;
-}
-/*---------div liste des menu-------*/
-.item-main:nth-child(1) >menu .liste{
-	width: 100%;
-	height: 85%;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: space-around;
-}
-.item-main:nth-child(1) >menu .liste a{
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-}
-.item-main:nth-child(1) >menu .liste a > img{
-	width: 50%;
-	transition: 0.5s ease-in-out;
-}
-/*-------animation des bouton----*/
-.liste a:hover img{
-	transform: scale(1.2) rotate(20deg);
-}
-
-
-/*------------section 2 modif---------------*/
 .item-main:nth-child(2){
-	flex: 0 0 25vw;
-	height: 80vh;
-	align-self: center;
-	position: relative;
-	box-shadow: 0 0 35px black;
+	display: none;	
 }
-.texte {
-	line-height: 30px;
-	width: 100%;
-	position: absolute;
-	top: 1em;
-	text-align: center;
-}
-.texte h2{
-	font-family: var(--policeimage) ;
-	color: var(--couleur-vert);
-	font-size: 1rem;
-	letter-spacing: 2px;
-}
-.item-main:nth-child(2) > .image{
-	width: 25vh;
-	height: 80vh;
-	-webkit-filter: drop-shadow(10px 20px 40px #000) sepia();
-	        filter: drop-shadow(10px 20px 40px #000) sepia();
-		
-}
-
-
-
-.image >img{
-	width: 25vw;
-	height: 80vh;
-	-o-object-fit: cover;
-	   object-fit: cover;
-	-webkit-filter: blur(100px) brightness(15);
-	        filter: blur(100px) brightness(15);
-
-	
-}
-
-/*--------------section 3----------*/
-	
 .item-main:nth-child(3){
-	flex: 1 1 75vw;
-	height: 75vh;
+	width: 100%;
+	height: 100%;
 	overflow: hidden;
 	box-sizing: border-box;
 	padding: 1.1em 1.1em;
+	
 }
 .sect-article{
+	font-size: 18px;
 	box-shadow: 0 0 35px #000 inset;
 	width: 100%;
-	height: 70vh;
+	height: 99%;
 	box-sizing: border-box;
 	overflow-y: scroll;
 	padding: 1.8em;
 	scroll-behavior: smooth;
 }
 .sect-article article{
-	margin-top: 1.5em;
+	margin-top: 0.9em;
 }
 .sect-article article h1{
-	font-family: var(--titre-paragraphe);
+	font-family: defaulttitre;
 	color: #fff;
 	font-size: 1.3em;
 	margin: 1em 0;
 	text-align: center;
 	text-shadow: 10px 0 40px #fff;
 }
-.sect-article #about > p{
-	line-height: 25px;
-	font-family: var(--titre-paragraphe);
-	color:#fff ;
-	text-indent: 1em;
-	text-align: justify;
-	font-size: 0.75em;
-	
-}
 .sect-article article h2{
 	color: var(--couleur-vert);
 	margin: 0.5em 0;
-	text-transform: capitalize;
+	text-transform: uppercase;
+}
+.sect-article #about > p{
+	line-height: 25px;
+	font-family: defaulttitre;
+	color:#fff ;
+	text-indent: 0.3em;
+	text-align: center;
+	font-size: 0.83em;
+	
 }
 .sect-article #about > cite{
 	color: #fff;
 }
+#about > div > div > img {
+	width: 100%;
+	clip-path: circle(50% at 50% 50%);
+}
+#about > div  {
+	width: 100%;
+}
+#about > div > div  {
+	width: 100%;
+}
+/* --------------- mobile -------- */
+/* --------------- tablette -------- */
+@media screen and (min-width:768px) {
+	body{
+		display: flex;
+		justify-content: center;
+		align-items: center;	
+		width: 100vw;
+		height: 100vh;
+		background: #000;
+		font-size: 17px;
+		overflow-y: hidden;
+	}
+	main{
+		display: flex;
+		width: 85vw;
+		height: 75vh;
+		background-color: var(--color-main);
+	}
+	.item-main:nth-child(1){
+		display: block;
+		flex: 0 0 10%;
+		height: 75vh;	
+	}
+	/*------div menu-----*/
+	.item-main:nth-child(1) >menu{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		height: 75vh;
+	}
+	.item-main:nth-child(1) >menu .liste{
+		width: 100%;
+		height: 75vh;
+		display: flex;
+		flex-flow: column wrap;
+		align-items: center;
+		justify-content: space-around;
+	
+	}
+	.item-main:nth-child(1) >menu .liste a{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.item-main:nth-child(1) >menu .liste a > img{
+		width: 60%;
+		display: inline-block;
+		transition: 0.5s ease-in-out;
+	}
+/*-------animation des bouton----*/
+	.liste a:hover img{
+		transform: scale(1.2) rotate(20deg);
+	}
+
+	#about > div  {
+		display: none;
+	}
+}
+/* ------------ bureau ----------- */
+@media screen and (min-width:1200px){
+	/*------------section 2 modif---------------*/
+	.item-main:nth-child(2){
+		display: block;
+		flex: 0 0 25vw;
+		height: 80vh;
+		align-self: center;
+		position: relative;
+		box-shadow: 0 0 35px black;
+	}
+	.texte {
+		line-height: 30px;
+		width: 100%;
+		position: absolute;
+		top: 1em;
+		text-align: center;
+	}
+	.texte h2{
+		font-family: titre;
+		color: var(--couleur-vert);
+		font-size: 1rem;
+		letter-spacing: 2px;
+	}
+	.item-main:nth-child(2) > .image{
+		width: 25vh;
+		height: 80vh;
+		filter: drop-shadow(10px 20px 40px #000) sepia();		
+	}
+	.image >img{
+		width: 25vw;
+		height: 80vh;
+		object-fit: cover;
+	}
+	.signature{
+		font-size: 4rem;
+		color: #fff;
+		position: absolute;
+		bottom: 0.7rem;
+		right: 8%;
+		font-family: signature;
+		-webkit-transform: translate(0.7em,-0.2em) rotatez(-90deg);
+				transform: translate(0.7em,-0.2em) rotatez(-90deg);
+	}
+	.sect-article #about > p{
+		line-height: 25px;
+		font-family: defaulttitre;
+		color:#fff;
+		text-align: justify;
+		text-indent: 1em;
+		
+		
+		
+	}
+	#about > div  {
+		display: none;
+	}
+
+}
 /*-------------------- section compétences -----------------*/
-.containt-comp{
-	width: 80%;
-	margin: auto;
-}
-.item-comp{
-	width: 100%;
-	line-height: 45px;
-}
-.item-comp p{
-	text-transform: capitalize;
-}
-.select{
-	display: flex;
-	justify-content: space-between;
-	margin: 0.5em 0.5em;
-	color: #fff;
-}
-.item-comp div ~ .bar{
-	width: 100%;
-	border: 1px solid #fff;
-	height: 15px;
-	border-radius: 10px;
-	overflow: hidden;
-}
-.item-comp div ~ .bar > span{
-	height: 15px;
-	display: block;
-}
-.item-comp div ~ .bar > .html{
-	width: 90%;
-	background-color: var(--couleur-vert);
-}
-.item-comp div ~ .bar > .css{
-	width: 70%;
-	background-color: var(--couleur-vert);
-}
-.item-comp div ~ .bar > .js{
-	width: 10%;
-	background-color: var(--couleur-vert);
-}
-.item-comp div ~ .bar > .php{
-	width: 10%;
-	background-color: var(--couleur-vert);
-}
-.item-comp div ~ .bar > .bdd{
-	width: 10%;
-	background-color: var(--couleur-vert);
-}
-.item-comp div ~ .bar > .serveur{
-	width: 10%;
-	background-color: var(--couleur-vert);
-}
-/*-------multimedia info--------*/
-.item-comp div ~ .bar > .photoshop{
-	width: 50%;
-	background-color: var(--couleur-vert);
-}
-.item-comp div ~ .bar > .illustrator{
-	width: 40%;
-	background-color: var(--couleur-vert);
-}
-.item-comp div ~ .bar > .indesign{
-	width: 60%;
-	background-color: var(--couleur-vert);
-}
-.item-comp div ~ .bar > .after{
-	width: 50%;
-	background-color: var(--couleur-vert);
-}
-.item-comp div ~ .bar > .premiere{
-	width: 60%;
-	background-color: var(--couleur-vert);
-}
-.item-comp div ~ .bar > .animate{
-	width: 30%;
-	background-color: var(--couleur-vert);
-}
-/*---------------- section réalisation------------*/
-.real{
-	width: 100%;
-	height: 500px;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-around;
-	align-items: center;
-	border: 1px solid #fff;
-}
-.real > .item_real{
-	width: 30%;
-	height: 31%;
-	border: 1px solid #fff;
-	position: relative;
-}
-.item_real > img{
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-}
-.item_real > img + div{
-	position: absolute;
-	top: 0em;
-	left: 0em;
-	width: 100%;
-	height: 100%;
-	background-color: rgba(0, 0, 0, 0.753);
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-.item_real > img + div > h3{
-	color: #fff;
-	text-shadow: 0 0 12px #000;
-}
+	.containt-comp{
+		width: 80%;
+		margin: auto;
+	}
+	.item-comp{
+		width: 100%;
+		line-height: 45px;
+	}
+	.item-comp p{
+		text-transform: capitalize;
+	}
+	.select{
+		display: flex;
+		justify-content: space-between;
+		margin: 0.5em 0.5em;
+		color: #fff;
+	}
+	.item-comp div ~ .bar{
+		width: 100%;
+		border: 1px solid #fff;
+		height: 15px;
+		border-radius: 10px;
+		overflow: hidden;
+	}
+	.item-comp div ~ .bar > span{
+		height: 15px;
+		display: block;
+	}
+	.item-comp div ~ .bar > .html{
+		width: 90%;
+		background-color: var(--couleur-vert);
+	}
+	.item-comp div ~ .bar > .css{
+		width: 70%;
+		background-color: var(--couleur-vert);
+	}
+	.item-comp div ~ .bar > .js{
+		width: 10%;
+		background-color: var(--couleur-vert);
+	}
+	.item-comp div ~ .bar > .php{
+		width: 10%;
+		background-color: var(--couleur-vert);
+	}
+	.item-comp div ~ .bar > .bdd{
+		width: 10%;
+		background-color: var(--couleur-vert);
+	}
+	.item-comp div ~ .bar > .serveur{
+		width: 10%;
+		background-color: var(--couleur-vert);
+	}
+	/*-------multimedia info--------*/
+	.item-comp div ~ .bar > .photoshop{
+		width: 50%;
+		background-color: var(--couleur-vert);
+	}
+	.item-comp div ~ .bar > .illustrator{
+		width: 40%;
+		background-color: var(--couleur-vert);
+	}
+	.item-comp div ~ .bar > .indesign{
+		width: 60%;
+		background-color: var(--couleur-vert);
+	}
+	.item-comp div ~ .bar > .after{
+		width: 50%;
+		background-color: var(--couleur-vert);
+	}
+	.item-comp div ~ .bar > .premiere{
+		width: 60%;
+		background-color: var(--couleur-vert);
+	}
+	.item-comp div ~ .bar > .animate{
+		width: 30%;
+		background-color: var(--couleur-vert);
+	}	
+
+
 
 
