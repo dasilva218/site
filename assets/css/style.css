@@ -3,12 +3,12 @@
 /*----déclaration de variable---------*/
 @font-face{
 	font-family: titre;
-	src: url(../typos/28\ Days\ Later.ttf);
+	src: url(../typos/28\Days\Later.ttf);
 }
 
 @font-face{
 	font-family: signature;
-	src: url(../typos/Signature\ Flavour\ Demo.ttf);
+	src: url(../typos/Signature\Flavour\Demo.ttf);
 }
 @font-face{
 	font-family: defaulttitre;
